@@ -1,0 +1,66 @@
+BENCHMARK SUMMARY (51 RUNS | 20,000 FEs PER RUN | 5 ALGORITHMS)
+===========================================================================
+
+I. DATA DIAGNOSTICS (Market Index Proxy)
+----------------------------------------
+Jarque-Bera (Normality)   : p-value = 4.7912e-121 (Non-normal if < 0.05)
+ADF Test (Stationarity)   : p-value = 0.0000e+00 (Stationary if < 0.05)
+
+II. IN-SAMPLE ALGORITHMIC CONVERGENCE & COMPUTATIONAL COST
+----------------------------------------
+1. GA  (1989): Best 1.4578 | Mean 1.4297 | Std 0.0102 | CPU/Run: 4.74s
+2. PSO (1995): Best 1.4227 | Mean 1.3925 | Std 0.0173 | CPU/Run: 2.57s
+3. GWO (2014): Best 1.5018 | Mean 1.4986 | Std 0.0064 | CPU/Run: 2.95s
+4. HHO (2019): Best 1.4854 | Mean 1.3222 | Std 0.0874 | CPU/Run: 3.76s
+5. COA (2023): Best 1.2950 | Mean 1.1698 | Std 0.0376 | CPU/Run: 3.36s
+
+III. STATISTICAL VALIDATION (OMNIBUS & FULL PAIRWISE MATRIX)
+----------------------------------------
+Friedman Rank Test (Global): p-value = 2.8057e-38 (Significant if < 0.05)
+
+Wilcoxon Signed-Rank Test Matrix (p-values):
+            GA        PSO        GWO        HHO        COA
+GA         --- 5.1453e-10 5.1453e-10 1.6728e-08 5.1453e-10
+PSO 5.1453e-10        --- 5.1453e-10 2.5327e-06 5.1453e-10
+GWO 5.1453e-10 5.1453e-10        --- 5.1453e-10 5.1453e-10
+HHO 1.6728e-08 2.5327e-06 5.1453e-10        --- 9.3064e-10
+COA 5.1453e-10 5.1453e-10 5.1453e-10 9.3064e-10        ---
+
+IV. TOPOLOGICAL DIAGNOSTICS (SYSTEMIC RISK DECENTRALIZATION)
+----------------------------------------
+               HHI  Shannon Entropy
+Algorithm                          
+GA (1989)   0.1081           2.2617
+PSO (1995)  0.1019           2.2932
+GWO (2014)  0.1367           2.1308
+HHO (2019)  0.1296           2.1657
+COA (2023)  0.1006           2.2998
+
+FINAL IN-SAMPLE ASSET ALLOCATION MATRIX (%):
+----------------------------------------
+              GA (1989) PSO (1995) GWO (2014) HHO (2019) COA (2023)
+BAJAJ-AUTO.NS      12.5      10.48       9.31      10.36       9.56
+BHARTIARTL.NS     13.42       11.9      19.55       20.0       9.54
+BRITANNIA.NS       7.24       8.44        ---       5.68       10.1
+CIPLA.NS            6.5       8.71        5.0       5.31        ---
+COALINDIA.NS       10.5      10.78       8.71       7.04       9.52
+DRREDDY.NS          ---        ---        ---        ---      10.41
+EICHERMOT.NS        ---        ---        ---        ---       9.54
+ICICIBANK.NS       6.97       8.41        5.0        ---        ---
+ITC.NS            13.43      11.32      17.71      13.05      10.13
+M&M.NS            13.42      11.88      19.54      19.28       9.54
+NTPC.NS            9.08       9.61       5.15        5.0      12.11
+POWERGRID.NS        ---        ---       5.01        5.0        ---
+SUNPHARMA.NS       6.93       8.47       5.02       9.27       9.54
+
+===========================================================================
+V. OUT-OF-SAMPLE BACKTESTING RESULTS (NET OF DYNAMIC FRICTION)
+===========================================================================
+                    Cum. Return (%)  Ann. Return (%)  Ann. Volatility (%)  Sharpe Ratio  Info Ratio  Sortino Ratio  Max Drawdown (%)
+Portfolio Strategy                                                                                                                  
+GA (1989)                     -0.39            -0.44                11.72       -0.6130     -0.3490        -0.5690            -10.77
+PSO (1995)                     0.30             0.34                11.47       -0.5589     -0.2329        -0.5160            -10.61
+GWO (2014)                    -3.35            -3.79                12.52       -0.8415     -0.7772        -0.7973            -12.86
+HHO (2019)                    -1.48            -1.68                12.54       -0.6725     -0.4891        -0.6187            -11.78
+COA (2023)                     4.67             5.32                11.80       -0.1210      0.5265        -0.1110             -9.04
+Equal-Weight (1/N)             1.64             1.86                12.95       -0.3774      0.0000        -0.3483            -13.76
