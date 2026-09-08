@@ -10,6 +10,9 @@ This repository contains the complete computational framework, historical market
 * `portfolio_optimization.py`: The core simulation engine executing the algorithms.
 * `reproduce.py`: A unified script to extract statistical metrics and generate all manuscript figures directly from the saved workspace.
 * `simulation_workspace.pkl`: The serialized state of all 51 independent simulation trials.
+* `oos_equity_curves.csv`: Pre-calculated out-of-sample equity growth trajectories used for plotting.
+* `statistical_report.txt`: The final exported statistical validation and performance metrics.
+* `nifty49_*.csv`: The historical price, return, and covariance datasets.
 
 ## How to Reproduce the Results
 1. Clone this repository to your local machine.
